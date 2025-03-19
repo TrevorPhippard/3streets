@@ -15,13 +15,15 @@ import { addTask } from "./_actions/auth";
 
 export default async function Home() {
 
-  const isAuth = true;
+  const isAuth = false;
+  console.log('server')
 
-  // if (!isAuth) {
-  //   redirect('/signin')
-  // } else {
-  //   redirect('/dashboard')
-  // }
+  if (!isAuth) {
+
+    redirect('/signin')
+  } else {
+    redirect('/dashboard')
+  }
 
 
 

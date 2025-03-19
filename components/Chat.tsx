@@ -6,32 +6,32 @@ import React, { useState } from 'react'
 import { FaChevronDown } from "react-icons/fa";
 import ChatMessages from './ChatMessages';
 
-const messagesArr = [
-    {
-        name: 'Jester', message: 'meow'
-    },
-    {
-        name: 'Phoenix', message: 'meow'
-    },
-    {
-        name: 'Iceman', message: 'meow meow meow meow meow meow'
-    },
-    {
-        name: 'Stinger', message: 'meow meow meow meow meow meow meow meow meow'
-    }, {
-        name: 'Viper', message: 'meow'
-    }, {
-        name: 'Rooster', message: 'meow'
-    }, {
-        name: 'Hangman', message: 'meow'
-    }
-]
+// const messagesArr = [
+//     {
+//         name: 'Jester', message: 'meow'
+//     },
+//     {
+//         name: 'Phoenix', message: 'meow'
+//     },
+//     {
+//         name: 'Iceman', message: 'meow meow meow meow meow meow'
+//     },
+//     {
+//         name: 'Stinger', message: 'meow meow meow meow meow meow meow meow meow'
+//     }, {
+//         name: 'Viper', message: 'meow'
+//     }, {
+//         name: 'Rooster', message: 'meow'
+//     }, {
+//         name: 'Hangman', message: 'meow'
+//     }
+// ]
 
 export default function Chat() {
-    const [room, setRoom] = useState('');
-    const [joined, setJoined] = useState(true);
-    const [messages, setMessages] = useState<{ sender: string, message: string }[]>([]);
-    const [UserName, setUserName] = useState<string>('');
+    // const [room, setRoom] = useState('');
+    const [joined] = useState(true);
+    const [messages] = useState<{ sender: string, message: string }[]>([]);
+    const [UserName] = useState<string>('');
 
     const handleSendMessage = (message: string) => {
         console.log(message);

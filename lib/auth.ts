@@ -1,7 +1,7 @@
-import { Note as NoteType } from "@prisma/client";
+import { Note as NoteType } from "@prisma/client"; // Replace 'Note' with the correct type name from your Prisma schema
 import { cookies } from "next/headers";
-import db from "@/libs/db";
-import jwt, { JwtPayload } from "jsonwebtoken";
+import db from "./db";
+import jwt from "jsonwebtoken"
 
 const AUTH_TOKEN = "auth-token";
 
@@ -15,7 +15,7 @@ type ValidationResponse = {
 /**
  * Retrieve the authentication token from cookies.
  */
-export async function getTokenFromCookie(): string | undefined {
+export async function getTokenFromCookie(): Promise<string | undefined> {
   const cookieStore = await cookies();
   const token = cookieStore.get(AUTH_TOKEN);
 
@@ -59,7 +59,7 @@ export async function getUserIdFromToken(
   const jwtSecret = res.data as string;
 
   try {
-    const decodedToken = (await jwt.verify(token, jwtSecret)) as JwtPayload;
+    const decodedToken = (await jwt.verify(token, jwtSecret));
     const userId = decodedToken.id;
     if (userId === undefined) {
       return {

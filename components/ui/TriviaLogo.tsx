@@ -12,7 +12,7 @@ export default function Logo() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 className="stroke-amber-300"
-                width="125"
+                width="70"
             >
                 <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
                 <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
@@ -20,11 +20,9 @@ export default function Logo() {
                 <line x1="10" y1="1" x2="10" y2="4"></line>
                 <line x1="14" y1="1" x2="14" y2="4"></line>
             </svg>
-            <h1 className="text-7xl font-bold uppercase text-amber-300 ">
-                Trivia
-            </h1>
-            <h2 className="text-4xl text-white uppercase tracking-[.25em]  pb-10">
-                Builder
+
+            <h2 className="items-center text-4xl flex  text-white uppercase tracking-[.25em]  pb-10">
+                <span className="text-5xl font-bold  text-amber-300  ">  3 </span>Street
             </h2>
         </>
     );

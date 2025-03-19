@@ -39,8 +39,9 @@ export default function Sortable(props: { length: number | undefined }) {
         console.log(slides)
     }
 
-    function handleClick(event: { target: { id: string } }) {
-        setSlideAction(Number(event.target.id));
+    function handleClick(event: React.MouseEvent<HTMLLIElement>) {
+        const target = event.target as HTMLLIElement;
+        setSlideAction(Number(target.id));
     }
 
     return (

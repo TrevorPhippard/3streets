@@ -1,9 +1,6 @@
 "use client"
 import React from 'react';
 import { useEffect, useState } from 'react';
-
-
-
 import {
   Tabs,
   TabsContent,
@@ -65,9 +62,9 @@ export default function Page({ params }: {
       <TabsContent value="edit-tab" className='flex'>
         {fetchedGame &&
           <EditTab
-            id={Number(gameData.id)}
-            slideLength={Number(gameData?.Question.length)}
-            questions={gameData?.Question[slideSelect]}
+            id={Number(gameData?.id)}
+            slideLength={Number(gameData?.Question?.length ?? 0)}
+            questions={gameData?.Question?.[slideSelect] ?? undefined}
           />}
 
       </TabsContent>

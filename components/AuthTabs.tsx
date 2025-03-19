@@ -9,8 +9,8 @@ import {
 } from "@/components/ui/tabs"
 
 
-import SignIn from "@/components/SignIn"
-import SignUp from "@/components/SignUp"
+import SignIn from "@/components/SignIn_bak"
+import SignUp from "@/components/SignUp_bak"
 
 
 export default function ProfileForm() {

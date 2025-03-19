@@ -1,7 +1,9 @@
-const Button = () => <button></button>
+const Button = ({ children, ...props }: React.PropsWithChildren<React.ButtonHTMLAttributes<HTMLButtonElement>>) => (
+    <button {...props}>{children}</button>
+);
 
 export function SignIn({
-    provider, ...props
+    ...props
 }: { provider?: string } & React.ComponentPropsWithRef<typeof Button>) {
     return (
         <form

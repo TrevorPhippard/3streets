@@ -1,10 +1,10 @@
 {
-  "name": "trivia-app",
+  "name": "3street-next",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "dev:socket":"NODE_OPTIONS='--loader ts-node/esm --trace-warnings --no-warnings' ts-node server.mts",
+    "dev:socket": "NODE_OPTIONS='--loader ts-node/esm --trace-warnings --no-warnings' ts-node server.mts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -34,6 +34,7 @@
     "i": "^0.3.7",
     "jest-watch-typeahead": "^2.2.2",
     "jose": "^5.9.6",
+    "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.475.0",
     "next": "15.1.6",
     "next-auth": "^4.24.11",
@@ -59,6 +60,7 @@
     "@testing-library/react": "^16.2.0",
     "@types/bcryptjs": "^2.4.6",
     "@types/jest": "^29.5.14",
+    "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

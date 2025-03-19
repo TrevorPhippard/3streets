@@ -1,7 +1,7 @@
 import { create } from 'zustand'
-import { GameData, QuestionData } from './app/_types';
+// import { GameData, QuestionData } from './app/_types';
 import { GameData } from './app/_types/index';
-import { unknown } from 'zod';
+// import { unknown } from 'zod';
 
 // import.meta.env.VITE_TOKEN
 // import.meta.env.VITE_SOCKET_ENDPOINT
