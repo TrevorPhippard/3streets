@@ -1,5 +1,3 @@
-"use server"
-
 import { addTask, getTasks } from "./_actions/auth";
 
 type Task = {
@@ -9,7 +7,7 @@ type Task = {
 
 export default async function Home() {
 
-  const tasks = getTasks()
+  const tasks = getTasks();
 
 
   return <div className="bg-zinc-200 flex min-h-screen flex-col items-center pt-10">
