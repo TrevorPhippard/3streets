@@ -4,4 +4,4 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 [https://www.dev.3streets.org](https://dev.3streets.org/)
 
 #prod
-[https://3streets.org/]
+https://3streets.org/
