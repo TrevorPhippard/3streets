@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Provider from "@/lib/providers"
+import Provider from "../lib/providers"
+import Loading from "../components/loading"; // Adjust the path as needed
+import { Suspense } from "react";
+import ErrorBoundary from "@/components/ErrorBoundary";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,18 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Provider>
-          {children}
-        </Provider>
-        {/* <Template>
-        < ErrorBoundary fallback={<Error />}>
         <Suspense fallback={<Loading />}>
-        «ErrorBoundary fallback={<NotFound />}>
-        <Page />
-        < /ErrorBoundary>
-        < /Suspense>
-        </ErrorBoundary>
-        </Template> */}
+          <Provider>
+            {children}
+          </Provider>
+        </Suspense>
       </body>
     </html>
   );

@@ -8,7 +8,7 @@ generator client {
 // for local use DEV_DATABASE_URL
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("DEV_DATABASE_URL")
 }
 
 model Task {
@@ -16,69 +16,4 @@ model Task {
   title     String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-}
-
-model User {
-  id        String     @id @default(cuid())
-  email     String     @unique
-  username  String
-  password  String
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
-  UserAcct  UserAcct[]
-}
-
-model UserAcct {
-  id        String    @id @default(cuid())
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  User      User      @relation(fields: [UserId], references: [id])
-  UserId    String
-  Trivia    Trivia[]
-  Message   Message[]
-}
-
-model Trivia {
-  id          Int        @id @default(autoincrement())
-  title       String
-  game_id     String     @unique
-  bg_img      String
-  text_colour String
-  sliderTime  Int
-  userAcctId  String
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
-  userAcct    UserAcct   @relation(fields: [userAcctId], references: [id])
-  Question    Question[]
-}
-
-model Question {
-  id        String   @id @default(cuid())
-  triviaId  Int
-  question  String
-  answer    String
-  bg_img    String
-  order     Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  trivia    Trivia   @relation(fields: [triviaId], references: [id])
-}
-
-model Room {
-  id        String    @id @default(cuid())
-  name      String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  Message   Message[]
-}
-
-model Message {
-  id         String   @id @default(cuid())
-  roomId     String
-  userAcctId String
-  content    String
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-  room       Room     @relation(fields: [roomId], references: [id])
-  userAcct   UserAcct @relation(fields: [userAcctId], references: [id])
 }
