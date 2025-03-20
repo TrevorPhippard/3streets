@@ -4,7 +4,6 @@ import "./globals.css";
 import Provider from "../lib/providers"
 import Loading from "../components/loading"; // Adjust the path as needed
 import { Suspense } from "react";
-import ErrorBoundary from "@/components/ErrorBoundary";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
