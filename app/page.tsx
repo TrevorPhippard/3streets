@@ -1,5 +1,5 @@
 import prisma from "@/lib/db";
-import { addTask } from "./_actions/auth";
+// import { addTask } from "./_actions/auth";
 
 type Task = {
   id: string;
@@ -10,6 +10,13 @@ export default async function Home() {
 
   const tasks = await prisma.task.findMany()
 
+  async function addTask(formData: FormData) {
+    await prisma.task.create({
+      data: {
+        title: formData.get('title') as string,
+      }
+    })
+  }
 
   return <div className="bg-zinc-200 flex min-h-screen flex-col items-center pt-10">
     <h1 className="text-3xl font-medium">All Tasks:</h1>
