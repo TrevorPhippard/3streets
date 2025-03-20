@@ -8,7 +8,9 @@ const nextConfig: NextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-
+  env: {
+    DATABASE_URL: process.env.DATABASE_URL ?? "",
+  },
   images: {
     remotePatterns: [
       {
