@@ -8,3 +8,10 @@ export async function addTask(formData: FormData) {
         }
     })
 }
+
+export async function getTasks() {
+    return await prisma.task.findMany()
+}
+
+
+
