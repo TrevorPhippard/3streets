@@ -1,4 +1,5 @@
 import * as actions from "./_actions";
+export const dynamic = "force-dynamic";
 
 // type Task = {
 //   id: string;
